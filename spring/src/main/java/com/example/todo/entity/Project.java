@@ -42,7 +42,7 @@ public class Project {
     this.setUpdatedAt(now);
   }
 
-  @PreUpadate
+  @PreUpdate
   private void onUpdate() {
     this.setUpdatedAt(LocalDateTime.now());
   }
