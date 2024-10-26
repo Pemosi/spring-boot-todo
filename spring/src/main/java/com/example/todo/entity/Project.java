@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Data;
+import jakarta.persistence.PreUpdate;
 
 @Data
 @Entity
@@ -32,4 +34,16 @@ public class Project {
 
   @Column(name = "updated_at", nullable = false)
   private LocalDateTime updatedAt;
+
+  @PrePersist
+  private void onCreate() {
+    LocalDateTime now = LocalDateTime.now();
+    this.setCreatedAt(now);
+    this.setUpdatedAt(now);
+  }
+
+  @PreUpadate
+  private void onUpdate() {
+    this.setUpdatedAt(LocalDateTime.now());
+  }
 }
