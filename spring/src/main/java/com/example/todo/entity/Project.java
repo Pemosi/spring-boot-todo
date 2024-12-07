@@ -1,4 +1,5 @@
 package com.example.todo.entity;
+
 import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,7 +43,7 @@ public class Project {
     this.setUpdatedAt(now);
   }
 
-  @PreUpadate
+  @PreUpdate
   private void onUpdate() {
     this.setUpdatedAt(LocalDateTime.now());
   }
