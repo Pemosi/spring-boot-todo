@@ -1,6 +1,7 @@
 package com.example.todo.entity;
 
 import java.time.LocalDateTime;
+import com.example.todo.enums.TaskPriority;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -33,7 +34,7 @@ public class Task extends BaseEntity{
 
   @Column(nullable = false, columnDefinition = "SMALLINT")
   @Enumerated(EnumType.ORDINAL)
-  private Integer priority;
+  private TaskPriority priority;
 
   @Column(columnDefinition = "TEXT")
   private String memo;
