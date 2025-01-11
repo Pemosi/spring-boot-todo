@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class TaskPriorityResponse {
+
   private final String name;
   private final Integer value;
   private final String label;
