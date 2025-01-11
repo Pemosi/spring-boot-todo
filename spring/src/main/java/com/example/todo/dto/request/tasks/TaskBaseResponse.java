@@ -1,9 +1,9 @@
 package com.example.todo.dto.request.tasks;
 
-// import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import com.example.todo.entity.Project;
 import com.example.todo.entity.Task;
+import com.example.todo.util.TimeUtil;
 import lombok.Data;
 
 @Data
@@ -33,13 +33,17 @@ public class TaskBaseResponse {
     this.name = task.getName();
     this.priority = new TaskPriorityResponse(task.getPriority());
     this.memo = task.getMemo();
-
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-
-    this.deadlineAt = formatter.format(task.getDeadlineAt());
-    this.completedAt = formatter.format(task.getCompletedAt());
-    this.createdAt = formatter.format(task.getCreatedAt());
-    this.updatedAt = formatter.format(task.getUpdatedAt());
+    this.deadlineAt = this.formatFromDateTimeToYmdHm(task.getDeadlineAt());
+    this.completedAt = this.formatFromDateTimeToYmdHm(task.getCompletedAt());
+    this.createdAt = this.formatFromDateTimeToYmdHm(task.getCreatedAt());
+    this.updatedAt = this.formatFromDateTimeToYmdHm(task.getUpdatedAt());
   }
 
+  private String formatFromDateTimeToYmdHm(LocalDateTime dateTime) {
+    if (dateTime == null) {
+      return null;
+    }
+
+    return TimeUtil.Format.toYmdHm(dateTime);
+  }
 }
