@@ -1,4 +1,4 @@
-package com.example.todo.dto.request.tasks;
+package com.example.todo.dto.response;
 
 import com.example.todo.enums.TaskPriority;
 import lombok.Getter;

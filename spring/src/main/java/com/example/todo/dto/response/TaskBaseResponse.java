@@ -1,4 +1,4 @@
-package com.example.todo.dto.request.tasks;
+package com.example.todo.dto.response;
 
 import java.time.LocalDateTime;
 import com.example.todo.entity.Project;

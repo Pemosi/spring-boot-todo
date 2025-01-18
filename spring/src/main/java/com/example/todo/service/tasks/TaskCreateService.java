@@ -1,8 +1,8 @@
 package com.example.todo.service.tasks;
 
 import org.springframework.stereotype.Service;
-import com.example.todo.dto.request.tasks.TaskBaseResponse;
 import com.example.todo.dto.request.tasks.TaskCreateRequest;
+import com.example.todo.dto.response.TaskBaseResponse;
 import com.example.todo.entity.Project;
 import com.example.todo.entity.Task;
 import com.example.todo.repository.ProjectRepository;
