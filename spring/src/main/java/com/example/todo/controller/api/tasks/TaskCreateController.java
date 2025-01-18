@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.todo.dto.request.tasks.TaskBaseResponse;
 import com.example.todo.dto.request.tasks.TaskCreateRequest;
+import com.example.todo.dto.response.TaskBaseResponse;
 import com.example.todo.service.tasks.TaskCreateService;
 import jakarta.validation.Valid;
 
