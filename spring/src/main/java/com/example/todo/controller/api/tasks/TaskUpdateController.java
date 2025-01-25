@@ -8,11 +8,10 @@ import com.example.todo.dto.request.tasks.TaskUpdateRequest;
 import com.example.todo.dto.response.TaskBaseResponse;
 import com.example.todo.service.tasks.TaskUpdateService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping("/api/task")
+@RequestMapping("/api/tasks")
 public class TaskUpdateController {
 
   private final TaskUpdateService taskUpdateService;
@@ -20,10 +19,10 @@ public class TaskUpdateController {
   public TaskUpdateController(TaskUpdateService taskUpdateService) {
     this.taskUpdateService = taskUpdateService;
   }
-  @PostMapping
+
+  @PutMapping
   public ResponseEntity<TaskBaseResponse> invoke(@Valid @RequestBody TaskUpdateRequest request) {
     TaskBaseResponse response = this.taskUpdateService.invoke(request);
     return ResponseEntity.ok(response);
   }
-
 }

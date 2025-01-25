@@ -40,7 +40,7 @@ public class TaskUpdateService {
 
     Task updatedTask = this.taskRepository.save(task);
 
-    return new TaskBaseResponse(this.taskRepository.save(updatedTask));
+    return new TaskBaseResponse(updatedTask);
   }
 
 }
